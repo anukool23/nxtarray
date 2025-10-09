@@ -25,7 +25,7 @@ const generateEmailHtml = (userName = "User") => `
               <p>Hi ${userName},</p>
               <p>We are excited to see your interest in our services. Our team will connect with you shortly to assist you further.</p>
               <p>If you have any questions in the meantime, feel free to reply to this email or contact us at <a href="mailto:support@webno.store" style="color:#007bff;text-decoration:none;">support@webno.store</a>.</p>
-              <p>Best Regards,<br/><strong>The Webno Team</strong></p>
+              <p>Best Regards,<br/><strong>The NxtArray Team</strong></p>
             </td>
           </tr>
           <tr>
@@ -99,7 +99,7 @@ const createSendEmailCommand = (toAddress, fromAddress, userName) => {
                 Html: { Charset: "UTF-8", Data: generateEmailHtml(userName) },
                 Text: {
                     Charset: "UTF-8",
-                    Data: `Hi ${userName},\n\nThank you for showing interest in us. Our team will connect with you shortly.\n\n- The Webno Team`,
+                    Data: `Hi ${userName},\n\nThank you for showing interest in us. Our team will connect with you shortly.\n\n- The NxtArray Team`,
                 },
             },
             Subject: {
