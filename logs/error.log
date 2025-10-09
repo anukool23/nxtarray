@@ -1,0 +1,2 @@
+[2025-10-08 23:14:50] ERROR: ❌ Error processing form: The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.
+[2025-10-08 23:21:35] ERROR: ❌ Error processing form: The bucket does not allow ACLs
