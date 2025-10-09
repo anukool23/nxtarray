@@ -21,7 +21,7 @@ export default function HiringSection() {
 
             <div className="mt-16 w-full max-w-4xl px-4">
                 <Image
-                    src="/images/hiring-illustration.png" // Replace with your image path
+                    src="/logo.png" // Replace with your image path
                     alt="Hiring illustration"
                     width={1200}
                     height={600}

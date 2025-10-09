@@ -1,2 +1,7 @@
 [2025-10-08 23:14:50] ERROR: ❌ Error processing form: The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.
 [2025-10-08 23:21:35] ERROR: ❌ Error processing form: The bucket does not allow ACLs
+[2025-10-09 22:22:01] ERROR: ❌ Error processing form: Operation `contacts.insertOne()` buffering timed out after 10000ms
+[2025-10-09 22:28:24] ERROR: ❌ Error processing form: Operation `contacts.insertOne()` buffering timed out after 10000ms
+[2025-10-09 22:30:26] ERROR: ❌ Error processing form: constsavedContact is not defined
+[2025-10-09 23:29:59] ERROR: ❌ Error processing form: Operation `joins.insertOne()` buffering timed out after 10000ms
+[2025-10-10 00:43:14] ERROR: ❌ Error processing form: Email address is not verified. The following identities failed the check in region AP-SOUTH-1: anuanukool23@gmail.com

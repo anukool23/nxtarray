@@ -1,29 +1,31 @@
 import { NextResponse } from "next/server";
 import logger from "@/helper/logger";
 import { uploadToS3 } from "@/helper/upload2aws";
+import Contact from "@/models/contact";
+import {connectDb} from "@/config/mongodb";
+import { sendEmailToUser } from '../../../helper/sendEmail';
 
+connectDb();
 export async function POST(req) {
   try {
     const data = await req.formData();
     const file = data.get("file");
 
-    // Convert form data to object, excluding file
     const payload = {};
     for (const [key, value] of data.entries()) {
       if (key !== "file") payload[key] = value;
     }
-
-    // Handle file details if uploaded
+  
     if (file && typeof file === "object") {
-      // payload.filepath = `/uploads/${file.name}`; 
       const fileUrl = await uploadToS3(file, "contact-us");
-      console.log("fileUrl", fileUrl);
-      payload.filepath = fileUrl; // Update filepath to S3 URL
+      payload.filepath = fileUrl; 
       logger.info("📎 Received file:", file.name, file.size, file.type);
     }
-
-    console.log("📩 Received contact form:", payload);
     logger.info(`📩 Received contact form: ${JSON.stringify(payload)}`);
+    const newContact  = new Contact(payload);
+    await newContact.save();
+    const emailres = await sendEmailToUser(payload);
+        console.log(emailres);
 
     return NextResponse.json({
       success: true,

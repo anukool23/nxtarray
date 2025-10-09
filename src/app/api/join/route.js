@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import logger from "@/helper/logger";
 import { uploadToS3 } from "@/helper/upload2aws";
+import { connectDb } from "@/config/mongodb";
+import Join from "@/models/join";
 
+connectDb();
 export async function POST(req) {
   try {
     const data = await req.formData();
@@ -13,16 +16,15 @@ export async function POST(req) {
       if (key !== "file") payload[key] = value;
     }
 
-    // Handle file details if uploaded
     if (file && typeof file === "object") {
-      // payload.filepath = `/uploads/${file.name}`; 
       const fileUrl = await uploadToS3(file, "join-us");
-      console.log("fileUrl", fileUrl);
-      payload.filepath = fileUrl; // Update filepath to S3 URL
+      payload.filepath = fileUrl; 
       logger.info("📎 Received file:", file.name, file.size, file.type);
     }
 
-    console.log("📩 Received contact form:", payload);
+    const joinUs = new Join(payload);
+    await joinUs.save();
+
     logger.info(`📩 Received contact form: ${JSON.stringify(payload)}`);
 
     return NextResponse.json({

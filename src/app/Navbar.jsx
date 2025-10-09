@@ -54,7 +54,7 @@ export default function Navbar() {
                         <button
                             className={`hidden md:block ${contactButtonClasses}`}
                         >
-                            Contact us
+                            <Link href="/contact">Contact us</Link>
                         </button>
 
                         {/* Mobile Contact Icon */}
@@ -62,7 +62,9 @@ export default function Navbar() {
                             className="md:hidden bg-pink-600 text-white rounded-full p-3 hover:bg-pink-700 transition shadow-md"
                             aria-label="Contact us"
                         >
+                            <Link href="/contact">
                             <Mail className="w-6 h-6" />
+                            </Link>
                         </button>
 
                         {/* Search Icon */}
@@ -104,9 +106,9 @@ export default function Navbar() {
                                 {link.name}
                             </Link>
                         ))}
-                        <button className={contactButtonClasses}>
+                        {/* <button className={contactButtonClasses}>
                             <Link href="/contact">Contact us</Link>
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             )}
