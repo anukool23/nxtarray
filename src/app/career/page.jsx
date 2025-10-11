@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import CurrentOpening from "./CurrentOpening";
 
 export default function HiringSection() {
     return (
@@ -20,13 +21,7 @@ export default function HiringSection() {
             </Link>
 
             <div className="mt-16 w-full max-w-4xl px-4">
-                <Image
-                    src="/logo.png" // Replace with your image path
-                    alt="Hiring illustration"
-                    width={1200}
-                    height={600}
-                    className="rounded-xl object-cover mx-auto"
-                />
+                <CurrentOpening/>
             </div>
         </section>
     );

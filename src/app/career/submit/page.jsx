@@ -47,13 +47,19 @@ export default function ContactForm() {
     const [formData, setFormData] = useState(INITIAL_STATE);
     const [loading, setLoading] = useState(false);
     const formRef = useRef(null); 
+    const [fileName, setFileName] = useState("No file chosen");
 
     const handleChange = (e) => {
         const { name, value, type, checked, files } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: type === "checkbox" ? checked : files?.[0] || value,
-        }));
+        if (files) {
+            setFormData((prev) => ({ ...prev, file: files[0] }));
+            setFileName(files[0]?.name || "No file chosen");
+        } else {
+            setFormData((prev) => ({
+                ...prev,
+                [name]: type === "checkbox" ? checked : value,
+            }));
+        }
     };
 
     const handleSubmit = async (e) => {
@@ -170,20 +176,22 @@ export default function ContactForm() {
                         {/* File upload */}
                         <div>
                             <label
-                                htmlFor="resume"
-                                className="block text-sm font-medium mb-1"
+                                htmlFor="file"
+                                className="cursor-pointer bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-800 inline-block"
                             >
-                                Upload your resume
+                                Select your resume
                             </label>
                             <input
-                                id="resume"
+                                id="file"
                                 name="file"
                                 type="file"
-                                accept=".doc,.docx,.pdf"
+                                accept=".doc,.docx,.pdf,"
                                 onChange={handleChange}
-                                required
-                                className="border p-2 rounded w-full"
+                                className="hidden"
                             />
+                            <span className="ml-3 text-sm text-gray-600">
+                                {fileName}
+                            </span>
                         </div>
 
                         {/* Consent */}

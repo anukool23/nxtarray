@@ -62,3 +62,47 @@
 [2025-10-10 00:43:14] ERROR: ❌ Error processing form: Email address is not verified. The following identities failed the check in region AP-SOUTH-1: anuanukool23@gmail.com
 [2025-10-10 00:43:42] INFO: 📩 Received contact form: {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","company":"gergerg","hearAboutUs":"LinkedIn","division":"Support","opportunity":"zxvdzv","agree":"true"}
 [2025-10-10 00:48:15] INFO: 📩 Received contact form: {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","company":"","hearAboutUs":"Google","division":"Support","opportunity":"vxvxx","agree":"true"}
+[2025-10-10 10:45:14] INFO: 📎 Received file:
+[2025-10-10 10:45:14] INFO: 📩 Received contact form: {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","company":"gergerg","hearAboutUs":"Referral","division":"Support","opportunity":"dsdssdfs","agree":"true","filepath":"https://anukool-test-1.s3.ap-south-1.amazonaws.com/contact-us/2c76c80045a56bd028fd1c17b5cbac2a.pdf"}
+[2025-10-10 18:21:59] INFO: 📎 Received file:
+[2025-10-10 18:21:59] INFO: 📩 Received contact form: {"name":"Anukool Patel","email":"anuanukool23@gmail.com","countryCode":"India","phone":"09711907767","company":"thmnu","hearAboutUs":"Google","division":"Support","opportunity":"cdjdsfse","agree":"true","filepath":"https://anukool-test-1.s3.ap-south-1.amazonaws.com/contact-us/4b6c40014ccd70332495dc4eb6dd81b3.pdf"}
+[2025-10-10 18:22:00] ERROR: ❌ Error processing form: Email address is not verified. The following identities failed the check in region AP-SOUTH-1: anuanukool23@gmail.com
+[2025-10-10 18:22:16] INFO: 📎 Received file:
+[2025-10-10 18:22:16] INFO: 📩 Received contact form: {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","company":"thmnu","hearAboutUs":"Google","division":"Support","opportunity":"cdjdsfse","agree":"true","filepath":"https://anukool-test-1.s3.ap-south-1.amazonaws.com/contact-us/044fe071caa596bb4f431e84e8d6fd81.pdf"}
+[2025-10-10 22:50:43] INFO: 📎 Received file on /api/join :  
+[2025-10-10 22:50:43] INFO: 📩 Received contact form : {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","hearAboutUs":"LinkedIn","division":"Frontend Developer","opportunity":"xv xcbsdb","agree":"true","filepath":"https://anukool-test-1.s3.ap-south-1.amazonaws.com/join-us/d9fb3926c0ae321071d2d7a809c8b48d.pdf"}
+[2025-10-10 22:50:43] INFO: Saved data in Database form /api/join
+[2025-10-10 22:50:43] ERROR: ❌ Error processing form on /api/join: sendEmailForJoin is not defined
+[2025-10-10 22:51:26] INFO: 📎 Received file on /api/join :  
+[2025-10-10 22:51:26] INFO: 📩 Received contact form : {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","hearAboutUs":"LinkedIn","division":"Frontend Developer","opportunity":"xv xcbsdb","agree":"true","filepath":"https://anukool-test-1.s3.ap-south-1.amazonaws.com/join-us/0c0ef9c3d36e23f1890c04263de866bb.pdf"}
+[2025-10-10 22:51:26] INFO: Saved data in Database form /api/join
+[2025-10-10 22:51:27] ERROR: ❌ Error processing form on /api/join: Email address is not verified. The following identities failed the check in region AP-SOUTH-1: no-reply@nxtarray.com
+[2025-10-10 22:55:32] INFO: 📎 Received file on /api/join :  
+[2025-10-10 22:55:32] INFO: 📩 Received contact form : {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","hearAboutUs":"LinkedIn","division":"Frontend Developer","opportunity":"xv xcbsdb","agree":"true","filepath":"https://anukool-test-1.s3.ap-south-1.amazonaws.com/join-us/f1cecba83f8e50ec42dfe363a3337093.pdf"}
+[2025-10-10 22:55:32] INFO: Saved data in Database form /api/join
+[2025-10-10 22:55:33] ERROR: ❌ Error processing form on /api/join: Email address is not verified. The following identities failed the check in region AP-SOUTH-1: no-reply@webno.com
+[2025-10-10 22:56:35] INFO: 📩 Received contact form on /api/contact: {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","company":"fh","hearAboutUs":"LinkedIn","division":"Sales","opportunity":"fherhetr","agree":"true"}
+[2025-10-10 22:56:35] INFO: Saved data in Database from /api/contact
+[2025-10-10 22:56:35] ERROR: ❌ Error processing form on /api/contact: Email address is not verified. The following identities failed the check in region AP-SOUTH-1: no-reply@webno.com
+[2025-10-10 22:57:54] INFO: 📎 Received file on /api/join :  
+[2025-10-10 22:57:54] INFO: 📩 Received contact form : {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","hearAboutUs":"Google","division":"Backend Developer","opportunity":"xvcdsavds","agree":"true","filepath":"https://anukool-test-1.s3.ap-south-1.amazonaws.com/join-us/a5b96a33069a9e5f90d0a444636550bf.pdf"}
+[2025-10-10 22:57:54] INFO: Saved data in Database form /api/join
+[2025-10-10 22:57:54] INFO: Mail triggered successfully for /api/contact
+[2025-10-10 23:00:29] INFO: 📎 Received file on /api/join :  
+[2025-10-10 23:00:29] INFO: 📩 Received contact form : {"name":"Anukool Patel","email":"anuanukool23@gmail.com","countryCode":"India","phone":"09711907767","hearAboutUs":"LinkedIn","division":"Backend Developer","opportunity":"scascas","agree":"true","filepath":"https://anukool-test-1.s3.ap-south-1.amazonaws.com/join-us/90415b7bf76ac9eee7e4167114696561.pdf"}
+[2025-10-10 23:00:29] INFO: Saved data in Database form /api/join
+[2025-10-10 23:00:29] ERROR: ❌ Error processing form on /api/join: Email address is not verified. The following identities failed the check in region AP-SOUTH-1: anuanukool23@gmail.com
+[2025-10-10 23:00:43] INFO: 📎 Received file on /api/join :  
+[2025-10-10 23:00:43] INFO: 📩 Received contact form : {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","hearAboutUs":"LinkedIn","division":"Backend Developer","opportunity":"scascas","agree":"true","filepath":"https://anukool-test-1.s3.ap-south-1.amazonaws.com/join-us/e22cf214d4afea1345c2a43be70f4e43.pdf"}
+[2025-10-10 23:00:43] INFO: Saved data in Database form /api/join
+[2025-10-10 23:00:43] INFO: Mail triggered successfully for /api/contact
+[2025-10-10 23:05:00] INFO: 📎 Received file on /api/contact:
+[2025-10-10 23:05:00] INFO: 📩 Received contact form on /api/contact: {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"+91","phone":"09711907767","company":"ABC XYZ","hearAboutUs":"Google","division":"Partnerships","opportunity":"sdvbwsbviuewncas ","agree":"true","filepath":"https://anukool-test-1.s3.ap-south-1.amazonaws.com/contact-us/edcaa0341c70cfb9545965cddc3ac53c.pdf"}
+[2025-10-10 23:05:01] INFO: Saved data in Database from /api/contact
+[2025-10-10 23:05:01] INFO: Mail triggered successfully for /api/contact
+[2025-10-10 23:26:05] INFO: 📎 Received file on /api/join :  
+[2025-10-10 23:26:05] INFO: 📩 Received contact form : {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","hearAboutUs":"LinkedIn","division":"Frontend Developer","opportunity":"gedgewgwe","agree":"true","filepath":"https://anukool-test-1.s3.ap-south-1.amazonaws.com/join-us/ea6ebcdf423578c950c7ed0aae1f146a.pdf"}
+[2025-10-10 23:26:05] INFO: Saved data in Database form /api/join
+[2025-10-10 23:26:05] INFO: ✅ User email sent for /api/join:
+[2025-10-10 23:26:05] INFO: ✅ Admin email sent for /api/join:
+[2025-10-10 23:26:05] INFO: Mail triggered successfully for /api/contact

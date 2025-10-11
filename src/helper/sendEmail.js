@@ -1,5 +1,6 @@
 import { SendEmailCommand } from "@aws-sdk/client-ses";
 import { sesClient } from "./sesClient";
+import logger from "./logger";
 
 // HTML Email Template for user
 const generateEmailHtml = (userName = "User") => `
@@ -24,13 +25,13 @@ const generateEmailHtml = (userName = "User") => `
             <td style="padding:30px;color:#333333;font-size:16px;line-height:1.5;">
               <p>Hi ${userName},</p>
               <p>We are excited to see your interest in our services. Our team will connect with you shortly to assist you further.</p>
-              <p>If you have any questions in the meantime, feel free to reply to this email or contact us at <a href="mailto:support@webno.store" style="color:#007bff;text-decoration:none;">support@webno.store</a>.</p>
+              <p>If you have any questions in the meantime, feel free to contact us at <a href="mailto:engage@nxtarray.com" style="color:#007bff;text-decoration:none;">engage@nxtarray.com</a>.</p>
               <p>Best Regards,<br/><strong>The NxtArray Team</strong></p>
             </td>
           </tr>
           <tr>
             <td style="background-color:#f0f0f0;padding:20px;text-align:center;font-size:12px;color:#555555;">
-              © ${new Date().getFullYear()} Webno. All rights reserved.
+              © ${new Date().getFullYear()} NxtArray. All rights reserved.
             </td>
           </tr>
         </table>
@@ -78,7 +79,7 @@ const generateAdminEmailHtml = (payload) => {
             </tr>
             <tr>
               <td style="background-color:#f0f0f0;padding:20px;text-align:center;font-size:12px;color:#555555;">
-                © ${new Date().getFullYear()} Webno. All rights reserved.
+                © ${new Date().getFullYear()} NxtArray. All rights reserved.
               </td>
             </tr>
           </table>
@@ -121,14 +122,15 @@ const createSendEmailCommandToAdmin = (toAddress, fromAddress, payload) => {
                 Html: {
                     Charset: "UTF-8",
                     Data: generateAdminEmailHtml({
-                        "Name":payload?.name,
-                        "Email":payload?.email,
-                        "Contact Details":`${payload?.countryCode}-${payload?.phone}`,
-                        "Company":payload?.company || "NULL",
-                        "From where he came to know about us":payload?.hearAboutUs,
-                        "What type of service user required":payload?.division,
-                        "Requirements":payload?.opportunity,
-                        "Attachments":payload?.filepath ||"NULL"
+                        Name: payload?.name,
+                        Email: payload?.email,
+                        "Contact Details": `${payload?.countryCode}-${payload?.phone}`,
+                        Company: payload?.company || "NULL",
+                        "From where he came to know about us":
+                            payload?.hearAboutUs,
+                        "What type of service user required": payload?.division,
+                        Requirements: payload?.opportunity,
+                        Attachments: payload?.filepath || "NULL",
                     }),
                 },
                 Text: {
@@ -154,24 +156,24 @@ const createSendEmailCommandToAdmin = (toAddress, fromAddress, payload) => {
 export const sendEmailToUser = async (payload) => {
     const sendEmailCommandToUser = createSendEmailCommand(
         payload?.email,
-        "no-reply@webno.store",
+        process.env.NOREPLY_EMAIL,
         payload?.name || "User"
     );
 
     const sendEmailCommandToAdmin = createSendEmailCommandToAdmin(
-        "anukoolpatel05@gmail.com", // admin email
-        "admin@webno.store",
+        process.env.RECEIVER_ADMIN_EMAIL, // admin email
+        process.env.ADMIN_EMAIL,
         payload
-    );
-
+        
+      );
     try {
         const response = await sesClient.send(sendEmailCommandToUser);
         const responseAdmin = await sesClient.send(sendEmailCommandToAdmin);
-        console.log("User email sent:", response.MessageId);
-        console.log("Admin email sent:", responseAdmin.MessageId);
+        logger.info("User email sent for /api/contact:", response.MessageId);
+        logger.info("Admin email sent for /api/contact:", responseAdmin.MessageId);
         return response;
     } catch (error) {
-        console.error("Error sending email:", error);
+        logger.error("Error sending email for /api/contact:", error);
         throw error;
     }
 };

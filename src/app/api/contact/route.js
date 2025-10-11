@@ -19,20 +19,21 @@ export async function POST(req) {
     if (file && typeof file === "object") {
       const fileUrl = await uploadToS3(file, "contact-us");
       payload.filepath = fileUrl; 
-      logger.info("📎 Received file:", file.name, file.size, file.type);
+      logger.info("📎 Received file on /api/contact:", file.name, file.size, file.type);
     }
-    logger.info(`📩 Received contact form: ${JSON.stringify(payload)}`);
+    logger.info(`📩 Received contact form on /api/contact: ${JSON.stringify(payload)}`);
     const newContact  = new Contact(payload);
-    await newContact.save();
-    const emailres = await sendEmailToUser(payload);
-        console.log(emailres);
+    const savedData = await newContact.save();
+    logger.info("Saved data in Database from /api/contact",JSON.stringify(savedData))
+    const emailResult = await sendEmailToUser(payload);
+    logger.info("Mail triggered successfully for /api/contact",JSON.stringify(emailResult))
 
     return NextResponse.json({
       success: true,
       message: "Form submitted successfully",
     });
   } catch (error) {
-    logger.error(`❌ Error processing form: ${error.message}`);
+    logger.error(`❌ Error processing form on /api/contact: ${error.message}`);
     return NextResponse.json(
       { success: false, message: "Internal Server Error" },
       { status: 500 }
