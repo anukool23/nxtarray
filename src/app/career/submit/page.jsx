@@ -95,7 +95,7 @@ export default function ContactForm() {
                     <img
                         src="/logo.png"
                         alt="Illustration"
-                        className="max-w-sm rounded-lg shadow-lg"
+                        className="max-w-sm "
                     />
                 </div>
 

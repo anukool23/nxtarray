@@ -106,3 +106,14 @@
 [2025-10-10 23:26:05] INFO: ✅ User email sent for /api/join:
 [2025-10-10 23:26:05] INFO: ✅ Admin email sent for /api/join:
 [2025-10-10 23:26:05] INFO: Mail triggered successfully for /api/contact
+[2025-10-11 13:03:27] INFO: 📩 Received contact form on /api/contact: {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","company":"thmnu","hearAboutUs":"Google","division":"Sales","opportunity":"fbshfh","agree":"true"}
+[2025-10-11 13:03:29] INFO: Saved data in Database from /api/contact
+[2025-10-11 13:03:29] INFO: User email sent for /api/contact:
+[2025-10-11 13:03:29] INFO: Admin email sent for /api/contact:
+[2025-10-11 13:03:29] INFO: Mail triggered successfully for /api/contact
+[2025-10-11 13:04:32] INFO: 📎 Received file on /api/join :  
+[2025-10-11 13:04:32] INFO: 📩 Received contact form : {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","hearAboutUs":"Google","division":"Backend Developer","opportunity":"dhdhd","agree":"true","filepath":"https://anukool-test-1.s3.ap-south-1.amazonaws.com/join-us/8f32d467414e1e7d717c30fe3dd3302c.pdf"}
+[2025-10-11 13:04:32] INFO: Saved data in Database form /api/join
+[2025-10-11 13:04:32] INFO: ✅ User email sent for /api/join:
+[2025-10-11 13:04:32] INFO: ✅ Admin email sent for /api/join:
+[2025-10-11 13:04:32] INFO: Mail triggered successfully for /api/contact
