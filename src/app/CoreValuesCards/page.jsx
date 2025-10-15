@@ -282,11 +282,11 @@ export function CoreValuesWeb3() {
   );
 }
 
-export default {
-  CoreValuesApple,
-  CoreValuesTesla,
-  CoreValuesCyberpunk,
-  CoreValuesAIAura,
-  CoreValuesLuxury,
-  CoreValuesWeb3,
-};
+// export  {
+//   CoreValuesApple,
+//   CoreValuesTesla,
+//   CoreValuesCyberpunk,
+//   CoreValuesAIAura,
+//   CoreValuesLuxury,
+//   CoreValuesWeb3,
+// };

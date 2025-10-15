@@ -1,10 +1,7 @@
 "use client";
-import { CoreValuesApple,
-    CoreValuesTesla,
-    CoreValuesCyberpunk,
+import { 
     CoreValuesAIAura,
-    CoreValuesLuxury,
-    CoreValuesWeb3,} from "../CoreValuesCards/page";
+    } from "../CoreValuesCards/page";
 
 export default function Page() {
   return (
