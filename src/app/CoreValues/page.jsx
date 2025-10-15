@@ -47,7 +47,7 @@ const VALUES = [
 const container = { hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { staggerChildren: 0.06 } } };
 const card = { hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.2, 0.9, 0.3, 1] } } };
 
-export default function Page() {
+export default function CoreValues() {
   return (
       <section className="py-24 px-6" style={{ background: "linear-gradient(180deg,#0b1226,#07102a 40%, #020617 100%)" }}>
       <div className="absolute -left-20 -top-24 w-96 h-96 rounded-full blur-3xl opacity-30" style={{ background: "radial-gradient(circle at 30% 30%, rgba(99,102,241,0.24), transparent 35%)" }} />
