@@ -1,5 +1,5 @@
 "use client";
-import CoreValues from "../CoreValues/page";
+import CoreValues from "../corevalues/page";
 export default function WhyUs() {
   const cardData = [
     {
