@@ -6,11 +6,11 @@ import Link from "next/link";
 
 // Navigation links
 const NAV_LINKS = [
-    { name: "Services", href: "#" },
+    { name: "Services", href: "/ServicesSection" },
     { name: "About", href: "/about" },
     { name: "Careers", href: "/career" },
-    { name: "Why Us", href: "/whyus" },
-    { name: "Contact", href: "/contact" },
+    { name: "Why Us", href: "/WhyUs" },
+    { name: "Product", href: "/" },
 ];
 
 // Contact button styles
@@ -24,31 +24,31 @@ export default function Navbar() {
     const closeMenu = () => setIsOpen(false);
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-[#ccc6c6] shadow-md text-black-800">
+        <nav className="absolute top-0 left-0 w-full z-50 bg-gray-100/90 backdrop-blur-md text-gray-900">
             <div className="mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
-<Link
-    href="/"
-    className="flex-shrink-0 flex items-center h-16"
->
-    <img
-        src="/logo1.png"
-        alt="Illustration"
-        className="max-h-full w-auto "
-    />
-</Link>
-
+                    <Link
+                        href="/"
+                        className="flex-shrink-0 flex items-center h-16"
+                    >
+                        <img
+                            src="/logo1.png"
+                            alt="Illustration"
+                            className="max-h-full w-auto"
+                        />
+                    </Link>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex space-x-6">
                         {NAV_LINKS.map((link) => (
                             <Link
-                                key={link.name}
-                                href={link.href}
-                                className="hover:text-gray-300 transition"
-                            >
-                                {link.name}
-                            </Link>
+                            key={link.name}
+                            href={link.href}
+                            className="block font-normal text-base hover:font-bold hover:text-sky-950 transform hover:scale-110 transition-all duration-300"
+                          >
+                            {link.name}
+                          </Link>
+                          
                         ))}
                     </div>
 

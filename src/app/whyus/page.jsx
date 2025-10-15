@@ -1,97 +1,57 @@
 "use client";
-
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-
-const cards = [
-  {
-    title: "Modernize the Digital Core",
-    description:
-      "A modern data and cloud-enabled digital core drives intelligent, secure, and scalable operations. Through a layered architecture, we boost efficiency and support essential AI workflows.",
-    img: "/images/card1.png",
-  },
-  {
-    title: "Digital Sovereignty in the Cloud",
-    description:
-      "Xebia partners with leading enterprises to modernize and manage their data and cloud infrastructure, ensuring greater resilience and scalability.",
-    img: "/images/card2.png",
-  },
-  {
-    title: "Agentic AI and the Future Enterprise Work",
-    description:
-      "Empowering enterprises with intelligent systems that adapt and evolve using AI-driven automation and decision-making.",
-    img: "/images/card3.png",
-  },
-];
-
+import CoreValues from "../CoreValues/page";
 export default function WhyUs() {
-  const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
+  const cardData = [
+    {
+      title: "Customer-Centric Approach",
+      description:
+        "We provide a personalised approach, consistent communication, and the ability to adapt to changing needs.",
+      icon: "🤝",
+    },
+    {
+      title: "Industry Expertise",
+      description:
+        "We anticipate challenges and seize opportunities with deep knowledge of market trends, enabling unique solutions.",
+      icon: "🏭",
+    },
+    {
+      title: "Strong Values",
+      description:
+        "We are committed to ethical practices and social responsibility in everything we do.",
+      icon: "🌱",
+    },
+    {
+      title: "Competitive Pricing",
+      description:
+        "We offer the best balance between high-quality delivery and cost-effectiveness.",
+      icon: "💰",
+    },
+  ];
 
-  const totalCards = cards.length;
-
-  return (
-    <section
-      ref={sectionRef}
-      className="relative h-[400vh] bg-gradient-to-b from-purple-950 to-purple-700"
-    >
-      <div className="sticky top-16 h-screen flex items-center justify-center">
-        <div className="relative w-full h-[900px] flex items-center justify-center overflow-visible pt-32">
-          {cards.map((card, i) => {
-            const start = i / totalCards;
-            const end = (i + 1) / totalCards;
-
-            // Slide from below
-            const y = useTransform(scrollYProgress, [start, end], ["100%", "0%"]);
-            // Fade-in
-            const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
-            // Scale effect
-            const scale = useTransform(scrollYProgress, [start, end], [0.9, 1]);
-
-            // Dynamic zIndex: becomes higher as scroll progresses
-            const zIndex = useTransform(
-              scrollYProgress,
-              [start, end],
-              [i, totalCards + i]
-            );
-
-            return (
-              <motion.div
-                key={i}
-                style={{
-                  y,
-                  opacity,
-                  scale,
-                  zIndex,
-                  position: "absolute",
-                }}
-                className="top-0 left-1/2 -translate-x-1/2 w-[85%] min-h-[700px] bg-[#45055A] rounded-3xl text-white shadow-2xl p-16 flex flex-col md:flex-row items-center justify-between gap-12"
-                whileHover={{ scale: 1.03 }}
-              >
-                <div className="flex-1">
-                  <h2 className="text-5xl font-bold mb-6">{card.title}</h2>
-                  <p className="text-gray-200 mb-8 text-lg leading-relaxed">
-                    {card.description}
-                  </p>
-                  <button className="bg-white text-purple-800 font-semibold px-8 py-3 rounded-lg hover:bg-purple-200 transition">
-                    Explore More →
-                  </button>
-                </div>
-                <div className="flex-1 flex justify-center">
-                  <img
-                    src={card.img}
-                    alt={card.title}
-                    className="rounded-2xl object-cover w-full max-w-[520px] shadow-lg"
-                  />
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+  return (<>
+   <section className="py-20 bg-gradient-to-b from-gray-900 to-black text-white">
+      {/* Title */}
+      <div className="text-center mb-12">
+        <h2 className="text-5xl font-extrabold tracking-tight">Why Us</h2>
       </div>
+
+      {/* Card Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 lg:px-20">
+        {cardData.map((card, index) => (
+          <div
+            key={index}
+            className="bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-2xl shadow-xl
+                       hover:shadow-2xl hover:scale-105 transition-all duration-300"
+          >
+            <div className="text-5xl mb-4">{card.icon}</div>
+            <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">{card.description}</p>
+          </div>
+        ))}
+      </div>
+      
     </section>
+      <CoreValues /></>
+   
   );
 }
