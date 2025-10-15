@@ -1,5 +1,5 @@
 import WhatWeOffer from "./WhatWeOffer/page";
-import WhyUs from "./WhyUs/page";
+import WhyUs from "./Whyus/page";
 
 import ServicesSection from "./ServicesSection/page";
 
