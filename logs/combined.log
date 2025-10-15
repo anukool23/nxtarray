@@ -117,3 +117,20 @@
 [2025-10-11 13:04:32] INFO: ✅ User email sent for /api/join:
 [2025-10-11 13:04:32] INFO: ✅ Admin email sent for /api/join:
 [2025-10-11 13:04:32] INFO: Mail triggered successfully for /api/contact
+[2025-10-15 21:56:25] INFO: 📎 Received file on /api/contact:
+[2025-10-15 21:56:25] INFO: 📩 Received contact form on /api/contact: {"name":"Anukool Patel","email":"anukoolpatel05@gmail.com","countryCode":"India","phone":"09711907767","company":"bgerger","hearAboutUs":"Google","division":"Support","opportunity":"gergreg","agree":"true","filepath":"https://anukool-test-1.s3.ap-south-1.amazonaws.com/contact-us/cd64dce5eedcb6a8f03933d755881571.pdf"}
+[2025-10-15 21:56:25] INFO: Saved data in Database from /api/contact
+[2025-10-15 21:56:26] INFO: User email sent for /api/contact:
+[2025-10-15 21:56:26] INFO: Admin email sent for /api/contact:
+[2025-10-15 21:56:26] INFO: Mail triggered successfully for /api/contact
+[2025-10-15 21:57:28] INFO: 📎 Received file on /api/join :  
+[2025-10-15 21:57:28] INFO: 📩 Received contact form : {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","hearAboutUs":"LinkedIn","division":"Backend Developer","opportunity":"hrthrthrh","agree":"true","filepath":"https://anukool-test-1.s3.ap-south-1.amazonaws.com/join-us/a53ba9109cf48f0f86d2100b54297544.pdf"}
+[2025-10-15 21:57:28] INFO: Saved data in Database form /api/join
+[2025-10-15 21:57:28] INFO: ✅ User email sent for /api/join:
+[2025-10-15 21:57:28] INFO: ✅ Admin email sent for /api/join:
+[2025-10-15 21:57:28] INFO: Mail triggered successfully for /api/contact
+[2025-10-15 23:57:35] INFO: 📩 Received contact form on /api/contact: {"name":"Anukool Patel","email":"aanukool.patel@gmail.com","countryCode":"India","phone":"09711907767","company":"gergerg","hearAboutUs":"Referral","division":"Support","opportunity":"dxdsfdf","agree":"true"}
+[2025-10-15 23:57:36] INFO: Saved data in Database from /api/contact
+[2025-10-15 23:57:36] INFO: Mail triggered successfully for /api/contact
+[2025-10-15 23:57:36] INFO: User email sent for /api/contact:
+[2025-10-15 23:57:36] INFO: Admin email sent for /api/contact:

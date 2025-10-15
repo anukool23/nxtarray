@@ -27,7 +27,7 @@ export async function POST(req) {
     const joinUs = new Join(payload);
     const savedData = await joinUs.save();
     logger.info("Saved data in Database form /api/join",JSON.stringify(savedData))
-    const emailResult = await sendEmailForJoin(payload)
+    const emailResult = sendEmailForJoin(payload)
     logger.info("Mail triggered successfully for /api/contact",JSON.stringify(emailResult))
     
 
