@@ -4,16 +4,16 @@ import { useState } from "react";
 import { Menu, X, Search, Mail } from "lucide-react";
 import Link from "next/link";
 
-// Navigation links - defined outside component to avoid re-creation
+// Navigation links
 const NAV_LINKS = [
-    { name: "Services", href: "#" },
-    { name: "About", href: "#" },
+    { name: "Services", href: "/ServicesSection" },
+    { name: "About", href: "/about" },
     { name: "Careers", href: "/career" },
-    { name: "Investors", href: "#" },
-    { name: "Contact", href: "/contact" },
+    { name: "Why Us", href: "/WhyUs" },
+    { name: "Product", href: "/" },
 ];
 
-// Common button styles
+// Contact button styles
 const contactButtonClasses =
     "bg-gradient-to-r from-pink-600 to-pink-500 text-white font-semibold py-2 px-6 rounded-full shadow-md hover:from-pink-700 hover:to-pink-600 transition";
 
@@ -24,27 +24,31 @@ export default function Navbar() {
     const closeMenu = () => setIsOpen(false);
 
     return (
-        <nav className="bg-[#0A1664] text-white">
+        <nav className="absolute top-0 left-0 w-full z-50 bg-gray-100/90 backdrop-blur-md text-gray-900">
             <div className="mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
-                    {/* Logo */}
                     <Link
                         href="/"
-                        className="flex-shrink-0 text-lg font-bold italic tracking-wide"
+                        className="flex-shrink-0 flex items-center h-16"
                     >
-                        NxtArray
+                        <img
+                            src="/logo1.png"
+                            alt="Illustration"
+                            className="max-h-full w-auto"
+                        />
                     </Link>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex space-x-6">
                         {NAV_LINKS.map((link) => (
                             <Link
-                                key={link.name}
-                                href={link.href}
-                                className="hover:text-gray-300 transition"
-                            >
-                                {link.name}
-                            </Link>
+                            key={link.name}
+                            href={link.href}
+                            className="block font-normal text-base hover:font-bold hover:text-sky-950 transform hover:scale-110 transition-all duration-300"
+                          >
+                            {link.name}
+                          </Link>
+                          
                         ))}
                     </div>
 
@@ -63,7 +67,7 @@ export default function Navbar() {
                             aria-label="Contact us"
                         >
                             <Link href="/contact">
-                            <Mail className="w-6 h-6" />
+                                <Mail className="w-6 h-6" />
                             </Link>
                         </button>
 
@@ -106,9 +110,6 @@ export default function Navbar() {
                                 {link.name}
                             </Link>
                         ))}
-                        {/* <button className={contactButtonClasses}>
-                            <Link href="/contact">Contact us</Link>
-                        </button> */}
                     </div>
                 </div>
             )}
