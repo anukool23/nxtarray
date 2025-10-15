@@ -1,7 +1,6 @@
-import WhatWeOffer from "./WhatWeOffer/page";
-import WhyUs from "./Whyus/page";
 
-import ServicesSection from "./ServicesSection/page";
+import ServicesSection from "./services/page";
+import WhyUs from './whyus/page';
 
 export default function Home() {
   return (

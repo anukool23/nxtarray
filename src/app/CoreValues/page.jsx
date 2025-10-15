@@ -1,7 +1,6 @@
-"use client";
 import { 
     CoreValuesAIAura,
-    } from "../CoreValuesCards/page";
+    } from "../corevaluescards/page";
 
 export default function Page() {
   return (
