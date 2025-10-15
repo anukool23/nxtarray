@@ -1,5 +1,5 @@
 "use client";
-import CoreValues from "../corevalues/page";
+import CoreValue from "../corevalue/page";
 export default function WhyUs() {
   const cardData = [
     {
@@ -51,7 +51,7 @@ export default function WhyUs() {
       </div>
       
     </section>
-      <CoreValues /></>
+      <CoreValue /></>
    
   );
 }
