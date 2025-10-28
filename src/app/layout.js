@@ -1,6 +1,7 @@
+import Footer from "./Footer";
 import "./globals.css";
 import Navbar from "./Navbar";
-import { Toaster } from "react-hot-toast";
+import ToasterClient from "./ToasterClient";
 
 
 export const metadata = {
@@ -11,21 +12,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="min-h-screen flex flex-col">
       <Navbar />
-       <Toaster
-        position="bottom-right"
-        toastOptions={{
-          duration: 8000,
-          success: {
-            duration: 8000,
-          },
-          error: {
-            duration: 8000,
-          },
-        }}
-      />
+      <ToasterClient />
+        <main className="flex-1">
         {children}
+        </main>
+        <Footer/>
       </body>
     </html>
   );

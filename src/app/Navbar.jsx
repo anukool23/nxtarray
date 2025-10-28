@@ -10,7 +10,7 @@ const NAV_LINKS = [
     { name: "About", href: "/about" },
     { name: "Careers", href: "/career" },
     { name: "Why Us", href: "/whyus" },
-    { name: "Product", href: "/" },
+    { name: "Product", href: "/products" },
 ];
 
 // Contact button styles
@@ -24,7 +24,7 @@ export default function Navbar() {
     const closeMenu = () => setIsOpen(false);
 
     return (
-        <nav className="absolute top-0 left-0 w-full z-50 bg-gray-100/90 backdrop-blur-md text-gray-900">
+        <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md text-slate-900 border-b border-slate-200">
             <div className="mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <Link
@@ -33,7 +33,7 @@ export default function Navbar() {
                     >
                         <img
                             src="/logo1.png"
-                            alt="Illustration"
+                            alt="NxtArray logo"
                             className="max-h-full w-auto"
                         />
                     </Link>
@@ -44,7 +44,7 @@ export default function Navbar() {
                             <Link
                             key={link.name}
                             href={link.href}
-                            className="block font-normal text-base hover:font-bold hover:text-sky-950 transform hover:scale-110 transition-all duration-300"
+                            className="block font-medium text-[15px] text-slate-700 hover:text-blue-700 transition-colors"
                           >
                             {link.name}
                           </Link>
@@ -56,14 +56,14 @@ export default function Navbar() {
                     <div className="flex items-center space-x-4">
                         {/* Desktop Contact Button */}
                         <button
-                            className={`hidden md:block ${contactButtonClasses}`}
+                            className={`hidden md:block bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold py-2 px-6 rounded-full shadow-md hover:from-blue-700 hover:to-blue-600 transition`}
                         >
                             <Link href="/contact">Contact us</Link>
                         </button>
 
                         {/* Mobile Contact Icon */}
                         <button
-                            className="md:hidden bg-pink-600 text-white rounded-full p-3 hover:bg-pink-700 transition shadow-md"
+                            className="md:hidden bg-blue-600 text-white rounded-full p-3 hover:bg-blue-700 transition shadow-md"
                             aria-label="Contact us"
                         >
                             <Link href="/contact">
@@ -74,7 +74,7 @@ export default function Navbar() {
                         {/* Search Icon */}
                         <button
                             aria-label="Search"
-                            className="p-1 hover:text-gray-300 transition"
+                            className="p-1 text-slate-600 hover:text-blue-700 transition"
                         >
                             <Search className="w-5 h-5" />
                         </button>
@@ -98,13 +98,13 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden border-t border-gray-700">
+                <div className="md:hidden border-t border-slate-200 bg-white/95 backdrop-blur">
                     <div className="px-4 py-3 space-y-2">
                         {NAV_LINKS.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="block hover:text-gray-300 transition"
+                                className="block text-slate-700 hover:text-blue-700 transition"
                                 onClick={closeMenu}
                             >
                                 {link.name}
