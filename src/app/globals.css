@@ -35,3 +35,11 @@ body {
   background-color: white; /* optional: for visibility */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* optional */
 }
+
+:root {
+  --nav-height: 64px; /* matches h-16 */
+}
+
+body {
+  padding-top: var(--nav-height);
+}

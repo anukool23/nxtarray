@@ -27,57 +27,65 @@ export default function HiringSection() {
   };
 
   const cardVariant = {
-    hidden: { opacity: 0, y: 18, scale: 0.995 },
-    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
-    hover: { scale: 1.02, transition: { duration: 0.18 } },
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+    hover: { scale: 1.03, transition: { duration: 0.25 } },
   };
 
   return (
     <section
       aria-labelledby="hiring-heading"
-      className="w-full min-h-screen relative overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(180deg, rgba(42,6,68,1) 0%, rgba(60,13,115,1) 30%, rgba(32,91,255,1) 100%)",
-      }}
+      className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-[#020617] text-white py-24"
     >
-      {/* decorative aurora glows */}
-      <div className="absolute -left-28 -top-24 w-96 h-96 rounded-full opacity-30 blur-3xl mix-blend-screen pointer-events-none" style={{ background: "radial-gradient(circle at 30% 30%, rgba(130,84,255,0.45), transparent 40%)" }} />
-      <div className="absolute right-10 bottom-10 w-72 h-72 rounded-full opacity-25 blur-2xl mix-blend-screen pointer-events-none" style={{ background: "radial-gradient(circle at 70% 70%, rgba(64,199,255,0.25), transparent 40%)" }} />
+      {/* 🌌 Ambient Glows */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[-20%] left-[-15%] w-[900px] h-[900px] bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.25),transparent_70%)] blur-[150px]" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[1000px] h-[1000px] bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.25),transparent_70%)] blur-[180px]" />
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.15),transparent_70%)] blur-[130px]" />
+      </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 py-20">
-        {/* Intro */}
-        <div className="text-center mb-14">
-          <h2 id="hiring-heading" className="inline-flex items-center gap-3 text-5xl md:text-6xl font-extrabold text-white">
-            <span className="bg-gradient-to-r from-pink-300 via-purple-300 to-cyan-200 bg-clip-text text-transparent">👋</span>
-            <span className="leading-tight">Hi</span>
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+        {/* 🩵 Intro Section */}
+        <div className="text-center mb-16">
+          <h2
+            id="hiring-heading"
+            className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(59,130,246,0.3)]"
+          >
+            Join Our Team
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-100/85 leading-relaxed">
-            Some of the best stories start with a <span className="font-semibold text-white">Hi</span>. Share yours — join our team and help build impactful products.
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-blue-100/90 leading-relaxed">
+            Shape the future with innovation and integrity. Explore roles that challenge and inspire.
           </p>
 
-          <div className="mt-6 flex justify-center gap-4">
-            <Link href="/career/submit" className="inline-flex items-center gap-3 bg-white/95 text-purple-900 font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-2xl transition">
-              Submit your resume
+          <div className="mt-8 flex justify-center gap-4 flex-wrap">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-[0_0_25px_rgba(37,99,235,0.3)] hover:shadow-[0_0_35px_rgba(37,99,235,0.45)] transition-all"
+            >
+              Submit Resume
             </Link>
             <button
               onClick={() => window.scrollTo({ top: 800, behavior: "smooth" })}
-              className="inline-flex items-center gap-2 border border-white/20 text-white/95 px-5 py-3 rounded-full bg-white/5 hover:bg-white/8 transition"
+              className="inline-flex items-center gap-2 border border-blue-400/40 text-blue-100 px-5 py-3 rounded-full bg-blue-900/20 hover:bg-blue-800/30 transition-all"
             >
-              See Openings
+              View Openings
             </button>
           </div>
         </div>
 
-        {/* Filters */}
-        <div className="flex justify-center mb-10">
+        {/* 🧩 Filter Buttons */}
+        <div className="flex justify-center mb-12">
           <div className="inline-flex gap-3 flex-wrap">
             {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition
-                  ${filter === cat ? "bg-white/10 ring-1 ring-white/25 text-white shadow-lg" : "bg-white/6 text-white/80 hover:bg-white/8"}`}
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-all
+                  ${
+                    filter === cat
+                      ? "bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.3)]"
+                      : "bg-blue-950/40 text-blue-200/80 hover:bg-blue-900/40"
+                  }`}
               >
                 {cat}
               </button>
@@ -85,109 +93,75 @@ export default function HiringSection() {
           </div>
         </div>
 
-        {/* Cards grid */}
-        <motion.div variants={container} initial="hidden" animate="show" className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* 💼 Job Cards */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10"
+        >
           {filteredJobs.map((job, idx) => (
             <motion.article
               key={idx}
-              tabIndex={0}
-              role="button"
-              onKeyDown={(e) => (e.key === "Enter" ? router.push("/career/submit") : null)}
-              onClick={() => router.push("/career/submit")}
               variants={cardVariant}
               whileHover="hover"
-              className="relative h-[300px] rounded-2xl overflow-hidden cursor-pointer"
-              style={{
-                // glass + subtle border
-                background: "linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)",
-                backdropFilter: "blur(8px)",
-                WebkitBackdropFilter: "blur(8px)",
-                border: "1px solid rgba(255,255,255,0.06)",
-                boxShadow: "0 8px 30px rgba(16,24,40,0.35)",
-              }}
+              tabIndex={0}
+              role="button"
+              onKeyDown={(e) => (e.key === "Enter" ? router.push("/contact") : null)}
+              onClick={() => router.push("/contact")}
+              className="relative h-[300px] rounded-2xl overflow-hidden cursor-pointer group border border-blue-400/20 backdrop-blur-2xl
+                bg-gradient-to-br from-[#0d111c]/90 via-[#0b0f1a]/85 to-[#090d18]/90
+                shadow-[inset_0_0_25px_rgba(255,255,255,0.05),0_10px_30px_rgba(0,0,0,0.4)] 
+                hover:shadow-[0_0_45px_rgba(59,130,246,0.25)] transition-all"
             >
-              {/* Card content layout */}
-              <div className="absolute inset-0 p-6 flex flex-col md:flex-row items-start md:items-center gap-6">
-                {/* Left content */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.25),transparent_60%)] blur-2xl" />
+
+              <div className="absolute inset-0 p-6 flex flex-col md:flex-row items-start md:items-center gap-6 relative z-10">
                 <div className="flex-1 min-w-0">
-                  {/* Category badge */}
                   <div className="mb-3">
-                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold"
-                      style={{
-                        background: "linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))",
-                        color: "white",
-                        border: "1px solid rgba(255,255,255,0.04)",
-                      }}
-                    >
-                      <span
-                        className="w-2 h-2 rounded-full"
-                        style={{
-                          background: job.category === "Engineering" ? "linear-gradient(90deg,#7c3aed,#4f46e5)" :
-                                      job.category === "Marketing" ? "linear-gradient(90deg,#fb923c,#f97316)" :
-                                      job.category === "Operations" ? "linear-gradient(90deg,#06b6d4,#0891b2)" :
-                                      "linear-gradient(90deg,#a78bfa,#60a5fa)",
-                          display: "inline-block",
-                        }}
-                      />
-                      <span className="min-w-[6ch]">{job.category}</span>
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-950/40 text-blue-100 border border-blue-700/30">
+                      <span className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 inline-block" />
+                      {job.category}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl md:text-2xl font-bold text-white truncate">{job.title}</h3>
-
-                  <p className="mt-2 text-sm text-white/80 max-w-xl">
+                  <h3 className="text-2xl font-bold text-blue-100">{job.title}</h3>
+                  <p className="mt-2 text-sm text-blue-200/90">
                     {job.experience} • {job.location}
                   </p>
-
-                  <p className="mt-4 text-sm text-white/70 max-w-xl leading-relaxed">
-                    Join a remote-first team focused on building reliable, scalable systems and great product experiences.
+                  <p className="mt-4 text-sm text-blue-100/70 leading-relaxed">
+                    Be part of a forward-thinking, remote-first team delivering exceptional digital experiences.
                   </p>
 
                   <div className="mt-6 flex items-center gap-3">
                     <button
-                      onClick={(e) => { e.stopPropagation(); router.push("/career/submit"); }}
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold bg-white text-purple-800 hover:brightness-95 transition shadow-sm"
+                      onClick={(e) => { e.stopPropagation(); router.push("/contact"); }}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:shadow-[0_0_25px_rgba(37,99,235,0.3)] transition-all"
                     >
                       Apply Now
                     </button>
-
                     <button
-                      onClick={(e) => { e.stopPropagation(); alert('Saved—this is a demo action.'); }}
-                      className="inline-flex items-center gap-2 px-3 py-2 rounded-md text-sm bg-white/5 text-white/90 hover:bg-white/8 transition"
+                      onClick={(e) => { e.stopPropagation(); alert('Saved — this is a demo action.'); }}
+                      className="inline-flex items-center gap-2 px-3 py-2 rounded-md text-sm bg-blue-950/50 text-blue-100/90 hover:bg-blue-900/50 transition-all"
                     >
                       Save
                     </button>
                   </div>
                 </div>
 
-                {/* Right decorative accent */}
-                <div className="w-36 h-36 md:w-40 md:h-40 flex-shrink-0 rounded-xl relative overflow-hidden">
-                  <div aria-hidden className="absolute inset-0"
-                    style={{
-                      background: `linear-gradient(180deg, rgba(124,58,237,0.65), rgba(59,130,246,0.55))`,
-                      transform: "skewY(-6deg) translateY(-6px)",
-                    }}
-                  />
-                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden>
-                    <defs>
-                      <linearGradient id={`g-${idx}`} x1="0" x2="1" y1="0" y2="1">
-                        <stop offset="0%" stopColor="#d8b4fe" stopOpacity="0.5" />
-                        <stop offset="100%" stopColor="#60a5fa" stopOpacity="0.35" />
-                      </linearGradient>
-                    </defs>
-                    <rect x="0" y="0" width="100" height="100" fill={`url(#g-${idx})`} />
-                  </svg>
+                {/* 💡 Accent Glow on Right */}
+                <div className="w-36 h-36 md:w-40 md:h-40 flex-shrink-0 rounded-xl overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-b from-blue-500/60 to-blue-900/70" />
+                  <div className="absolute inset-0 opacity-50 mix-blend-overlay bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.3),transparent_70%)]" />
                 </div>
               </div>
-
-              {/* subtle glow on hover (pseudo) */}
-              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition" style={{ boxShadow: "0 20px 40px rgba(88, 72, 255, 0.16)" }} />
             </motion.article>
           ))}
         </motion.div>
 
-        {/* small footer note */}
-        <p className="mt-12 text-center text-sm text-white/60">Can't find the right fit? Submit your resume and we'll reach out.</p>
+        <p className="mt-16 text-center text-sm text-blue-200/70">
+          Can't find the right fit? Submit your resume — we’ll reach out when we have a match.
+        </p>
       </div>
     </section>
   );
