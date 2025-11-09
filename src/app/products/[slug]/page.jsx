@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { use } from "react";
 
 const PRODUCT_CONTENT = {
   overview: {
@@ -32,7 +34,7 @@ const PRODUCT_CONTENT = {
 
   privilance: {
     title: "Privilance",
-    hero: "/images/privilance.jpg",
+    hero: "/images/privilance.webp",
     lead: "Your Private Generative AI — Secure, Scalable, and Cost-Optimized",
     body: [
       "Privilance empowers organizations to run their own private Generative AI environment — giving you full control, privacy, and customization over your AI workflows. It’s designed for enterprises that want to leverage GenAI power without compromising on data security or cost efficiency.",
@@ -86,52 +88,67 @@ const PRODUCT_CONTENT = {
 };
 
 export default function ProductDetail({ params }) {
-  const { slug } = params;
+  const { slug } = use(params);
+
   const content = PRODUCT_CONTENT[slug];
 
   if (!content) {
     return (
-      <div className="max-w-5xl mx-auto px-4 py-16">
-        <h1 className="text-2xl font-semibold">Product not found</h1>
-      </div>
+      <main className="bg-[#020617] text-blue-100 min-h-screen flex items-center justify-center">
+        <h1 className="text-2xl">Product not found</h1>
+      </main>
     );
   }
 
   return (
-    <main>
-      <div className="relative h-56 md:h-80 w-full">
-        <Image src={content.hero} alt={content.title} fill priority className="object-cover" />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 flex items-center">
-          <div className="max-w-5xl mx-auto px-4">
-            <h1 className="text-white text-3xl md:text-5xl font-extrabold">{content.title}</h1>
-          </div>
-        </div>
-      </div>
+    <main className="bg-[#020617] text-blue-100 min-h-screen">
 
+      {/* HERO */}
+      {/* HERO */}
+<div className="relative h-[55vh] w-full">
+  <Image
+    src={content.hero}
+    alt={content.title}
+    fill
+    priority
+    className="object-cover"
+  />
+
+  {/* Bottom fade so text is readable */}
+  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#020617]/95" />
+
+  {/* Title pinned at bottom */}
+  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center w-full px-4">
+    <h1 className="text-3xl md:text-5xl font-bold text-blue-100 drop-shadow-lg">
+      {content.title}
+    </h1>
+  </div>
+</div>
+
+
+      {/* BODY */}
       <div className="max-w-5xl mx-auto px-4 py-10">
-        {content.lead && (
-          <p className="text-slate-700 text-lg md:text-xl">{content.lead}</p>
-        )}
+        <p className="text-blue-100/85 text-lg md:text-xl leading-relaxed">
+          {content.lead}
+        </p>
 
-        {content.body && content.body.length > 0 && (
-          <div className="mt-6 space-y-4">
-            {content.body.map((p, i) => (
-              <p key={i} className="text-slate-700/90 leading-relaxed">{p}</p>
-            ))}
-          </div>
-        )}
+        <div className="mt-6 space-y-5">
+          {content.body.map((p, i) => (
+            <p key={i} className="text-blue-100/80 leading-relaxed">
+              {p}
+            </p>
+          ))}
+        </div>
 
-        {content.bullets && content.bullets.length > 0 && (
-          <ul className="mt-6 list-disc pl-6 space-y-2 text-slate-700">
+        {content.bullets && (
+          <ul className="mt-8 space-y-2 text-blue-100/85">
             {content.bullets.map((b, i) => (
               <li key={i}>{b}</li>
             ))}
           </ul>
         )}
       </div>
+
     </main>
   );
 }
-
-

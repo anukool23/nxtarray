@@ -43,3 +43,16 @@ body {
 body {
   padding-top: var(--nav-height);
 }
+
+@keyframes shimmerGlow {
+  0% { opacity: 0.45; }
+  50% { opacity: 1; }
+  100% { opacity: 0.45; }
+}
+
+.glow-line {
+  animation: shimmerGlow 3.2s ease-in-out infinite;
+}
+
+
+

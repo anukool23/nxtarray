@@ -60,7 +60,7 @@ const SERVICE_CONTENT = {
   },
   "artificial-intelligence": {
     title: "Artificial Intelligence",
-    hero: "/images/background.jpg",
+    hero: "/images/gen-ai.jpg",
     lead: "Discover the possibilities of tomorrow, today.",
     body: [
       "We help organizations adopt AI responsibly, effectively, and at scale — going beyond prototypes to real business impact.",
@@ -95,7 +95,7 @@ const SERVICE_CONTENT = {
 
   "cloud-devops": {
     title: "Cloud & DevOps",
-    hero: "/images/cloud-devops.webp",
+    hero: "/images/Cloud-devops2.webp",
     lead: "Secure, scalable, and cost-efficient cloud ecosystems that accelerate delivery and improve performance.",
     body: [
       "We help organizations modernize infrastructure, automate delivery workflows, and adopt cloud-native practices with confidence.",
@@ -155,6 +155,7 @@ const SERVICE_CONTENT = {
 
 export default function ServiceDetail({ params }) {
   const { slug } = use(params);
+
   const content = SERVICE_CONTENT[slug];
 
   if (!content) {
@@ -195,7 +196,7 @@ export default function ServiceDetail({ params }) {
       {content.subServices && (
         <div className="max-w-6xl mx-auto px-6 pb-24">
           <h2 className="text-3xl font-bold text-blue-200 mb-10 text-center">
-            Services Under This Capability
+            What we offer
           </h2>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">

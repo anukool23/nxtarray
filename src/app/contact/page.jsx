@@ -148,10 +148,10 @@ export default function ContactForm() {
               Write to Us
             </h3>
             <a
-              href="mailto:contactus@nxtarray.com"
+              href="mailto:engage@nxtarray.com"
               className="border border-blue-400 text-blue-400 font-semibold px-6 py-3 rounded-lg hover:bg-blue-900/20 transition"
             >
-              CONTACTUS@NXTARRAY.COM
+              engage@nxtarray.com
             </a>
           </div>
         </motion.div>
