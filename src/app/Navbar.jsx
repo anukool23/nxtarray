@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Menu, X, Search, ChevronDown } from "lucide-react";
 import Link from "next/link";
-import { serviceGroups } from "./servicegroups";
+import { serviceGroups } from "./serviceGroups";
 import { productGroups } from "./productGroups";
 
 export default function Navbar() {
