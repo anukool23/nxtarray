@@ -1,5 +1,5 @@
 import ServicesSection from "./services/page";
-import WhyUs from './WhyUs/page';
+import WhyUs from './whyus/page';
 import ProductsPage from './products/page';
 
 export default function Home() {

@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import WhyUs from '../WhyUs/page';
+import whyus from '../whyus/page';
 import {
   Award,
   Users,
@@ -109,6 +109,6 @@ export default function OurValues() {
   const router = useRouter();
 
   return (<>
-    <WhyUs/>
+    <whyus/>
         </>);
 }
