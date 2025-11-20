@@ -14,13 +14,15 @@ export default function Navbar() {
   const close = () => setOpenMenu(null);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-white/75 border-b border-slate-200/60 shadow-sm">
+    // <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-white/75 border-b border-slate-200/60 shadow-sm">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-gray-100/90 backdrop-blur-md text-gray-900 border-b border-gray-300 shadow-sm">
+
       <div className="mx-auto px-6 lg:px-10">
         <div className="flex justify-between items-center h-16">
 
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img src="/logo1.png" className="h-8 w-auto" alt="logo" />
+            <img src="/logo1.png" className="h-12 w-auto" alt="logo" />
           </Link>
 
           {/* Desktop Menu */}

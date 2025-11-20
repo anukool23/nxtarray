@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex items-center space-x-3">
           <img src="/logo1.png" alt="NxtArray logo" className="h-7 w-auto" />
           <span className="text-base text-slate-700 tracking-wide">
-            © 2025 <a href="https://nxtarray.com/" className="text-blue-700 font-semibold hover:opacity-80">NxtArray™</a>
+            © 2025
           </span>
         </div>
 
@@ -37,7 +37,7 @@ export default function Footer() {
           </Link>
 
           <Link
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/nxt-array/"
             target="_blank"
             className="group"
           >

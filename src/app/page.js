@@ -22,7 +22,8 @@ export default function Home() {
             Enabling Digital Transformation, accelerated through AI
           </h1>
           <p className="mt-3 text-base md:text-lg text-blue-200">
-            Accelerate your AI/ML journey through our product Catalyst Forge that helps you achieve ML lifecycle automation and provision your own private and secure GenAI stack in no time.
+            {/* Accelerate your AI/ML journey through our product Catalyst Forge that helps you achieve ML lifecycle automation and provision your own private and secure GenAI stack in no time. */}
+            Accelerate your AI/ML journey through our Products Catalyst Forge and Privilance, that would help you achieve ML Lifecycle Automation and your own Private and secure GenAI Stack in no time.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
             <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 font-semibold shadow-md transition">

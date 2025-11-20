@@ -111,7 +111,7 @@ export default function ProductDetail({ params }) {
     alt={content.title}
     fill
     priority
-    className="object-cover"
+    className="w-full h-auto object-contain"
   />
 
   {/* Bottom fade so text is readable */}
