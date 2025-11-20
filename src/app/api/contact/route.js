@@ -5,6 +5,8 @@ import Contact from "@/models/contact";
 import {connectDb} from "@/config/mongodb";
 import { sendEmailToUser } from '../../../helper/sendEmail';
 
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 connectDb();
 export async function POST(req) {
   try {
@@ -25,7 +27,7 @@ export async function POST(req) {
     const newContact  = new Contact(payload);
     const savedData = await newContact.save();
     logger.info("Saved data in Database from /api/contact",JSON.stringify(savedData))
-    const emailResult = sendEmailToUser(payload);
+    const emailResult = await sendEmailToUser(payload);
     logger.info("Mail triggered successfully for /api/contact",JSON.stringify(emailResult))
 
     return NextResponse.json({

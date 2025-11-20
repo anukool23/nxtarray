@@ -1,0 +1,218 @@
+"use client";
+import { use } from "react";
+import Image from "next/image";
+
+const SERVICE_CONTENT = {
+  "digital-engineering": {
+    title: "Digital Engineering",
+    hero: "/images/digital-engineering.jpg",
+    lead: "We design, build, and modernize digital systems that are scalable, efficient, and human-centered.",
+    body: [
+      "Digital experiences today need to be fast, seamless, and meaningful. With our engineering expertise, we help organizations modernize legacy systems, design intuitive user journeys, and build solutions that adapt as your business grows.",
+      "Our approach ensures that technology supports the strategy — not the other way around. We combine design thinking, future-ready architectures, and strong execution to deliver outcomes that last."
+    ],
+    subServices: [
+      { 
+        title: "Web Development", 
+        desc: "Modern, scalable web applications built with clean architecture, modular UI, and secure backend engineering." 
+      },
+      { 
+        title: "Mobile App Development", 
+        desc: "Native and cross-platform mobile apps that deliver smooth, intuitive, and performance-driven user experiences." 
+      },
+      { 
+        title: "QA & Testing", 
+        desc: "Structured manual and automated testing to ensure reliability, performance, and release confidence." 
+      },
+      { 
+        title: "UI/UX Design", 
+        desc: "User-centered design focusing on clarity, simplicity, visual appeal, and measurable business impact." 
+      }
+    ],
+  },
+
+  "data-analytics": {
+    title: "Data & Analytics",
+    hero: "/images/data-analytics.jpeg",
+    lead: "Find clarity in complexity — unlock insights from every byte.",
+    body: [
+      "We design scalable data foundations that enable visibility, predictability, and intelligent decision-making across the business.",
+      "From pipelines to predictive insights, we help organizations use data as a competitive advantage — not just as stored information."
+    ],
+    subServices: [
+      {
+        title: "Data Consulting",
+        desc: "Analyze current data systems, define data strategy, and develop solutions that translate raw information into business-ready insights."
+      },
+      {
+        title: "Data Engineering",
+        desc: "Design and build reliable pipelines that clean, structure, and orchestrate data for analytics, AI, and real-time applications."
+      },
+      {
+        title: "Data Migration & Modernisation",
+        desc: "Move and transform data across platforms while modernizing architecture for scale, performance, and advanced intelligence use cases."
+      },
+      {
+        title: "Analytics Services",
+        desc: "Deliver descriptive, diagnostic, predictive, and prescriptive analytics to support strategic and operational decision-making."
+      }
+    ],
+  },
+  "artificial-intelligence": {
+    title: "Artificial Intelligence",
+    hero: "/images/gen-ai.jpg",
+    lead: "Discover the possibilities of tomorrow, today.",
+    body: [
+      "We help organizations adopt AI responsibly, effectively, and at scale — going beyond prototypes to real business impact.",
+      "From intelligent automation to machine learning platforms and generative AI solutions, we build AI capabilities that enhance decision-making, efficiency, and innovation."
+    ],
+    subServices: [
+      {
+        title: "AI Strategy & Consulting",
+        desc: "Identify opportunities, assess readiness, and define AI transformation roadmaps aligned with business goals."
+      },
+      {
+        title: "Machine Learning & Predictive Analytics",
+        desc: "Design and deploy ML models that uncover patterns, predict outcomes, and automate insight generation."
+      },
+      {
+        title: "AI Platform Engineering & MLOps",
+        desc: "Build scalable infrastructure, pipelines, and lifecycle automation for production-grade AI deployments."
+      },
+      {
+        title: "Data Engineering & AI Enablement",
+        desc: "Prepare and manage high-quality data pipelines and governance frameworks required to power AI systems."
+      },
+      {
+        title: "AI for Business Automation",
+        desc: "Automate recurring workflows and decision processes to accelerate operations and reduce costs."
+      }
+    ],
+  },
+    
+
+ 
+
+  "cloud-devops": {
+    title: "Cloud & DevOps",
+    hero: "/images/Cloud-devops2.webp",
+    lead: "Secure, scalable, and cost-efficient cloud ecosystems that accelerate delivery and improve performance.",
+    body: [
+      "We help organizations modernize infrastructure, automate delivery workflows, and adopt cloud-native practices with confidence.",
+      "Our approach ensures reliability, faster releases, predictable operations, and optimized cloud spending."
+    ],
+    subServices: [
+      {
+        title: "Cloud Strategy & Consulting",
+        desc: "Define, implement, and optimize cloud environments aligned with business goals, ensuring scalability, resilience, and cost-effectiveness."
+      },
+      {
+        title: "Cloud Migration",
+        desc: "Seamless transition of applications, data, and workloads to the cloud with minimal disruption, backed by ongoing monitoring and governance."
+      },
+      {
+        title: "Cloud Managed Services",
+        desc: "Proactive management, monitoring, compliance, and performance tuning to ensure cloud environments stay secure, efficient, and reliable."
+      },
+      {
+        title: "DevOps-as-a-Service (DaaS)",
+        desc: "Complete setup and orchestration of CI/CD pipelines, infrastructure automation, and toolchains — accelerating delivery with reduced manual effort."
+      },
+      {
+        title: "Performance & Cost Optimization",
+        desc: "Analyze performance bottlenecks, optimize resource utilization, and reduce operational costs while improving system efficiency."
+      }
+    ],
+  },
+  
+
+  "cyber-security": {
+    title: "Cyber Security",
+    hero: "/images/Cybersecurity.webp",
+    lead: "Protecting your digital ecosystem with proactive defense, real-time detection, and rapid response.",
+    body: [
+      "Cyber threats evolve quickly — your defenses must evolve faster. We help organizations secure systems, infrastructure, and identities through layered protection strategies and continuous monitoring.",
+      "Our approach combines preventive security, active threat detection, incident readiness, and governance to build long-term resilience and trust."
+    ],
+    subServices: [
+      {
+        title: "Protection & Prevention",
+        desc: "Identify vulnerabilities and mitigate risks through penetration testing, cloud & network protection, identity security, and hardened configurations."
+      },
+      {
+        title: "Detection & Response",
+        desc: "24×7 monitoring, managed SOC operations, threat detection workflows, and guided incident response for breach containment and recovery."
+      },
+      {
+        title: "Strategy & Support",
+        desc: "Security strategy, compliance alignment, awareness training, risk assessments, and governance frameworks to sustain long-term resilience."
+      }
+    ],
+  },
+  
+};
+
+
+export default function ServiceDetail({ params }) {
+  const { slug } = use(params);
+
+  const content = SERVICE_CONTENT[slug];
+
+  if (!content) {
+    return (
+      <div className="max-w-5xl mx-auto px-6 py-16 text-white">
+        <h1 className="text-2xl font-semibold">Service not found</h1>
+      </div>
+    );
+  }
+
+  return (
+    <main className="bg-[#020617] text-white min-h-screen">
+
+      {/* Hero */}
+      <div className="relative h-[55vh] w-full">
+        <Image src={content.hero} alt={content.title} fill className="object-cover" />
+        <div className="absolute inset-0 bg-black/50" />
+
+        <div className="absolute bottom-14 w-full text-center px-4">
+          <h1 className="text-4xl md:text-6xl font-extrabold">{content.title}</h1>
+        </div>
+      </div>
+
+      {/* Body */}
+      <div className="max-w-5xl mx-auto px-6 py-14 leading-relaxed">
+        {content.lead && (
+          <p className="text-xl text-blue-200/90">{content.lead}</p>
+        )}
+
+        {content.body && (
+          <div className="mt-6 space-y-4 text-blue-100/75 text-[17px]">
+            {content.body.map((p, i) => <p key={i}>{p}</p>)}
+          </div>
+        )}
+      </div>
+
+      {/* ✅ Subservice Cards */}
+      {content.subServices && (
+        <div className="max-w-6xl mx-auto px-6 pb-24">
+          <h2 className="text-3xl font-bold text-blue-200 mb-10 text-center">
+            What we offer
+          </h2>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+            {content.subServices.map((item, index) => (
+              <div
+                key={index}
+                className="p-6 rounded-2xl bg-slate-900/60 border border-blue-800/30 text-center shadow-[0_0_25px_rgba(0,0,0,0.4)]"
+              >
+                <h3 className="text-lg font-semibold text-blue-200">{item.title}</h3>
+                <p className="text-blue-100/60 text-sm mt-2 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+    </main>
+  );
+}

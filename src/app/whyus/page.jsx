@@ -1,57 +1,123 @@
 "use client";
+import Image from "next/image";
 import CoreValue from "../corevalue/page";
-export default function WhyUs() {
-  const cardData = [
-    {
-      title: "Customer-Centric Approach",
-      description:
-        "We provide a personalised approach, consistent communication, and the ability to adapt to changing needs.",
-      icon: "🤝",
-    },
-    {
-      title: "Industry Expertise",
-      description:
-        "We anticipate challenges and seize opportunities with deep knowledge of market trends, enabling unique solutions.",
-      icon: "🏭",
-    },
-    {
-      title: "Strong Values",
-      description:
-        "We are committed to ethical practices and social responsibility in everything we do.",
-      icon: "🌱",
-    },
-    {
-      title: "Competitive Pricing",
-      description:
-        "We offer the best balance between high-quality delivery and cost-effectiveness.",
-      icon: "💰",
-    },
-  ];
 
-  return (<>
-   <section className="py-20 bg-gradient-to-b from-gray-900 to-black text-white">
-      {/* Title */}
-      <div className="text-center mb-12">
-        <h2 className="text-5xl font-extrabold tracking-tight">Why Us</h2>
-      </div>
+const VALUES = [
+  {
+    icon: "🤝",
+    title: "Customer-Centric Approach",
+    desc: "We provide personalised engagement, transparent communication, and the flexibility to adapt to evolving needs.",
+  },
+  {
+    icon: "🏭",
+    title: "Industry Expertise",
+    desc: "We anticipate challenges and seize opportunities with deep knowledge of market trends, enabling unique and effective solutions.",
+  },
+  {
+    icon: "🌱",
+    title: "Strong Values",
+    desc: "We are committed to ethical practices, empathy, and social responsibility in every interaction and decision.",
+  },
+  {
+    icon: "💰",
+    title: "Competitive Pricing",
+    desc: "We offer the best balance of high-quality delivery and cost efficiency without compromise.",
+  },
+];
 
-      {/* Card Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 lg:px-20">
-        {cardData.map((card, index) => (
-          <div
-            key={index}
-            className="bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-2xl shadow-xl
-                       hover:shadow-2xl hover:scale-105 transition-all duration-300"
-          >
-            <div className="text-5xl mb-4">{card.icon}</div>
-            <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
-            <p className="text-gray-300 text-sm leading-relaxed">{card.description}</p>
+export default function AboutSection({ showHero = true }) {
+  return (
+    <section className="relative bg-[#020617] text-white overflow-hidden w-full">
+
+      {/* Optional Hero Image */}
+      {showHero && (
+        <div className="relative w-full h-[45vh] md:h-[55vh]">
+          <Image
+            src="/aboutUs.jpg"
+            alt="About Us Hero"
+            fill
+            className="object-cover"
+            priority
+          />
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/40" />
+
+          {/* ✅ Text at bottom */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center">
+            <h1 className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg">
+              Our Story
+            </h1>
           </div>
-        ))}
+        </div>
+      )}
+
+
+
+      {/* Background Glow */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#03091b] via-[#020617] to-black" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-[radial-gradient(circle_at_center,rgba(63,94,251,0.12),transparent_70%)] blur-[120px]" />
+
+      {/* Intro Text */}
+      <div className="w-[80%] mx-auto px-4 py-20 text-left text-blue-100/85 text-[17px] leading-[1.85] space-y-6">
+        <p>
+          We started in 2025 with a mission to deliver reliable, high–quality technology solutions
+          at fair pricing. What began as a focused team is now a growing family driven by curiosity,
+          collaboration, and craftsmanship.
+        </p>
+
+        <p>
+          Our strong foundation in <span className="text-blue-300 font-medium">AI/ML, Cloud, and Data Engineering</span>
+          enables us to help organizations adopt emerging technologies with clarity and confidence — supported
+          by our own accelerators and product frameworks.
+        </p>
+
+        <p>
+          Being new encourages us to stay sharp — to listen better, improve faster, and consistently earn trust
+          through outcomes and relationships that last.
+        </p>
       </div>
-      
+
+      {/* Section Header */}
+      <div className="text-center mb-14">
+        <h3 className="text-3xl font-bold text-blue-200">What Sets Us Apart</h3>
+      </div>
+
+      {/* ✅ Full-width glitter grid table */}
+      {/* ✅ Full-width CoreValue-style grid */}
+      {/* ✅ Full-Width Grid with CoreValue Border Layout */}
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full">
+        {VALUES.map(({ icon, title, desc }, i) => {
+          const isLastRow = i >= 4; // because 4 columns in first row
+          const isFirstColumn = i % 4 === 0;
+
+          return (
+            <li
+              key={i}
+              className={`
+          p-10 flex flex-col gap-4 text-left relative text-blue-100/80
+
+          ${!isLastRow ? "after:absolute after:left-0 after:right-0 after:bottom-0 after:h-[1px] after:bg-gradient-to-r after:from-blue-800/20 after:via-blue-500/60 after:to-blue-800/20" : ""}
+
+          ${!isFirstColumn ? "before:absolute before:top-0 before:bottom-0 before:left-0 before:w-[1px] before:bg-gradient-to-b before:from-blue-800/20 before:via-blue-500/60 before:to-blue-800/20" : ""}
+        `}
+            >
+              <div className="text-4xl text-blue-300">{icon}</div>
+
+              <h3 className="text-lg font-semibold text-blue-100">{title}</h3>
+
+              <p className="text-sm leading-relaxed">
+                {desc}
+              </p>
+            </li>
+          );
+        })}
+      </ul>
+
+
+
+      {/* Core Values Below */}
+      <CoreValue />
     </section>
-      <CoreValue /></>
-   
   );
 }

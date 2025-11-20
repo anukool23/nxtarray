@@ -35,3 +35,24 @@ body {
   background-color: white; /* optional: for visibility */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* optional */
 }
+
+:root {
+  --nav-height: 64px; /* matches h-16 */
+}
+
+body {
+  padding-top: var(--nav-height);
+}
+
+@keyframes shimmerGlow {
+  0% { opacity: 0.45; }
+  50% { opacity: 1; }
+  100% { opacity: 0.45; }
+}
+
+.glow-line {
+  animation: shimmerGlow 3.2s ease-in-out infinite;
+}
+
+
+

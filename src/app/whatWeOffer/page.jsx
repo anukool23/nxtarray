@@ -33,8 +33,8 @@ export default function WhatWeOffer() {
     ];
   
     return (
-      <section className="py-16 bg-slate-800 text-gray-800 mt-10">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+      <section className="py-16  mt-10">
+        <div className="max-w-7xl mx-auto px-4 text-center bg-black">
           <h2 className="text-3xl font-semibold mb-4 text-white">What we offer</h2>
           <p className="max-w-2xl mx-auto mb-12 text-gray-300">
             We harness the power of digital engineering, aligning our expertise with your business needs to foster innovation, continuous improvement and growth.
