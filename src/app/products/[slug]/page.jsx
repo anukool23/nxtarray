@@ -16,7 +16,7 @@ const PRODUCT_CONTENT = {
 
   "catalyst-forge": {
     title: "Catalyst Forge",
-    hero: "/images/catalyst-forge.jpg",
+    hero: "/images/catalyst-forge2.webp",
     lead: "Accelerate Your AI Journey with Smart MLOps and Model Lifecycle Automation",
     body: [
       "Catalyst Forge provides enterprises with a powerful platform to operationalize AI models at scale. It brings together experimentation, deployment, monitoring, and governance under one unified system — helping data teams focus on innovation instead of infrastructure.",
@@ -111,7 +111,7 @@ export default function ProductDetail({ params }) {
     alt={content.title}
     fill
     priority
-    className="w-full h-auto object-contain"
+    className="object-cover w-full"
   />
 
   {/* Bottom fade so text is readable */}
