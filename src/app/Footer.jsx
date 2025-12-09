@@ -8,10 +8,11 @@ export default function Footer() {
         
         {/* Left */}
         <div className="flex items-center space-x-3">
-          <img src="/logo1.png" alt="NxtArray logo" className="h-7 w-auto" />
           <span className="text-base text-slate-700 tracking-wide">
             © 2025
           </span>
+          <img src="/logo1.png" alt="NxtArray logo" className="h-7 w-auto" />
+          
         </div>
 
         {/* Social Icons */}
