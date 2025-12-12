@@ -1,5 +1,5 @@
 import ServicesSection from "./services/page";
-import WhyUs from './whyus/page';
+import About from './about/page';
 import ProductsPage from './products/page';
 
 export default function Home() {
@@ -37,7 +37,7 @@ export default function Home() {
       </section>
       <ProductsPage />
       <ServicesSection />
-      <WhyUs showHero={false}/>
+      <About showHero={false}/>
 
     </main>
   );
