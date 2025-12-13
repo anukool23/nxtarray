@@ -1,0 +1,10 @@
+var R=require("../../../chunks/[turbopack]_runtime.js")("server/app/api/join/route.js")
+R.c("server/chunks/node_modules_@smithy_45c5b8ff._.js")
+R.c("server/chunks/[root-of-the-server]__2cd3807e._.js")
+R.c("server/chunks/[root-of-the-server]__d217c40c._.js")
+R.c("server/chunks/[root-of-the-server]__834f5d95._.js")
+R.c("server/chunks/[root-of-the-server]__b2da729a._.js")
+R.c("server/chunks/c86e0_@aws-sdk_core_dist-es_submodules_protocols_xml_parseXmlBody_91eb845e.js")
+R.c("server/chunks/_next-internal_server_app_api_join_route_actions_3d723b71.js")
+R.m(39231)
+module.exports=R.m(39231).exports

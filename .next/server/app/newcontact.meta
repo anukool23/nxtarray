@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/newcontact/layout,_N_T_/newcontact/page,_N_T_/newcontact"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/newcontact/__PAGE__",
+    "/newcontact",
+    "/_index",
+    "/_head"
+  ]
+}

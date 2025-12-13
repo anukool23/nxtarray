@@ -1,0 +1,20 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/aboutus/page": "/aboutus",
+  "/api/contact/route": "/api/contact",
+  "/api/join/route": "/api/join",
+  "/career/page": "/career",
+  "/career/submit/page": "/career/submit",
+  "/contact/page": "/contact",
+  "/corevalue/page": "/corevalue",
+  "/favicon.ico/route": "/favicon.ico",
+  "/newcontact/page": "/newcontact",
+  "/page": "/",
+  "/products/[slug]/page": "/products/[slug]",
+  "/products/page": "/products",
+  "/services/[slug]/page": "/services/[slug]",
+  "/services/page": "/services",
+  "/whatweoffer/page": "/whatweoffer"
+}

@@ -1,0 +1,20 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
+  "/aboutus/page": "app/aboutus/page.js",
+  "/api/contact/route": "app/api/contact/route.js",
+  "/api/join/route": "app/api/join/route.js",
+  "/career/page": "app/career/page.js",
+  "/career/submit/page": "app/career/submit/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/corevalue/page": "app/corevalue/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/newcontact/page": "app/newcontact/page.js",
+  "/page": "app/page.js",
+  "/products/[slug]/page": "app/products/[slug]/page.js",
+  "/products/page": "app/products/page.js",
+  "/services/[slug]/page": "app/services/[slug]/page.js",
+  "/services/page": "app/services/page.js",
+  "/whatweoffer/page": "app/whatweoffer/page.js"
+}
