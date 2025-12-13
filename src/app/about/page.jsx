@@ -32,7 +32,7 @@ export default function AboutSection({ showHero = true }) {
       {showHero && (
         <div className="relative w-full h-[45vh] md:h-[55vh]">
           <Image
-            src="/aboutUs.jpg"
+            src="/images/AboutUs.jpg"
             alt="About Us Hero"
             fill
             className="object-cover"

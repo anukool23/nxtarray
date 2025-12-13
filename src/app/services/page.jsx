@@ -99,14 +99,14 @@ export default function ServicesGrid3D() {
         </div>
 
         {/* Desktop Contact Us Button (replaces search icon functionality) */}
-        <div className="hidden md:flex justify-center mt-16">
+        {/* <div className="hidden md:flex justify-center mt-16">
           <Link
             href="/contact"
             className="px-8 py-3 rounded-full bg-blue-600 text-white font-semibold text-lg shadow-lg hover:bg-blue-700 transition-all"
           >
             Contact Us
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

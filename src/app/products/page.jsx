@@ -9,8 +9,7 @@ const PRODUCTS = [
 
 export default function ProductsPage() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#020617] text-white pb-16 pt-20">
-
+    <section className="relative min-h-screen w-full overflow-hidden bg-[#020617] text-white flex items-center  pb-24">
       {/* 🔮 Glowing Background Layers */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.25),transparent_70%)] blur-[140px]" />
